@@ -1,4 +1,4 @@
-# 🏗 Engineering Resource Management System
+# 🏗 Engineering Portal Management System
 
 A **full-stack MERN application** to manage engineers, projects, and assignments efficiently. This tool allows **managers** to assign engineers to projects, track capacity allocation, and monitor team workload, while **engineers** can view their own assignments and availability.
 
@@ -39,7 +39,7 @@ A **full-stack MERN application** to manage engineers, projects, and assignments
 - ⚛️ React (TypeScript)
 - 🎨 Tailwind CSS + ShadCN UI Components
 - 📝 React Hook Form for form handling
-- 🌐 Zustand / Context API for state management
+
 
 ### **Backend**
 - 🟢 Node.js + Express
@@ -49,16 +49,28 @@ A **full-stack MERN application** to manage engineers, projects, and assignments
 
 ---
 
-## 📂 Database Models
+🔐 AUTH ROUTES
+js
+Copy
+Edit
+authRouter.post("/signup", signup);
+authRouter.post("/login", login);
+authRouter.post("/logout", logout);
+authRouter.get("/profile", authMiddleware, getProfile);
+authRouter.put("/profile", authMiddleware, updateProfile);
 
-### 👤 **User**
-```js
-{
-  email: String,
-  name: String,
-  role: 'engineer' | 'manager',
-  skills: [String],
-  seniority: 'junior' | 'mid' | 'senior',
-  maxCapacity: Number,
-  department: String
-}
+👨‍💻 ENGINEER ROUTES
+router.get("/", authMiddleware, getEngineers);
+router.get("/:id/capacity", authMiddleware, getEngineerCapacity);
+
+📁 PROJECT ROUTES
+router.get("/", authMiddleware, getProjects);
+router.post("/", authMiddleware, createProject);
+router.get("/:id", authMiddleware, getProjectById);
+
+📌 ASSIGNMENT ROUTES
+router.get("/", authMiddleware, getAssignments);
+router.get("/:id", authMiddleware, getAssignmentById);
+router.post("/", authMiddleware, createAssignment);
+router.patch("/:id", authMiddleware, updateAssignment);
+router.delete("/:id", authMiddleware, deleteAssignment);
