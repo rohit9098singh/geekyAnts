@@ -152,7 +152,7 @@ const EngineerDashboard = () => {
                     </div>
                   </div>
                 </div>
-                <div className="text-right">
+                <div className="text-right hidden md:block">
                   <Badge className="bg-blue-100 text-blue-800 mb-2">
                     {engineerData.seniority || 'Engineer'}
                   </Badge>

@@ -213,16 +213,6 @@ const Navbar = () => {
                       Engineers
                     </Link>
                     <Link
-                      to="/planner"
-                      className={`block px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/planner'
-                          ? 'text-red-600'
-                          : 'text-white hover:text-red-600'
-                        }`}
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Planner
-                    </Link>
-                    <Link
                       to="/dashboard"
                       className={`block px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/dashboard'
                           ? 'text-red-600'
