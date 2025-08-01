@@ -11,7 +11,10 @@ dotenv.config();
 
 const app = express();
 
-const allowedOrigins = ["http://localhost:5173"];
+const allowedOrigins = [
+  "https://engineerportal.vercel.app",
+  "http://localhost:5173",
+];
 
 const corsOption = {
   origin: function (origin, callback) {
