@@ -139,7 +139,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">
-            © 2024 EngineerHub. All rights reserved.
+            © 2024 Engineer Panel. All rights reserved.
             {currentUser && (
               <span className="ml-2 text-xs text-gray-500">
                 Logged in as {currentUser.name} ({currentUser.role})
