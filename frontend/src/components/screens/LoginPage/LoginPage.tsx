@@ -31,7 +31,7 @@ const LoginPage = () => {
         setLoading(true);
         try {
             await authService.login(data);
-            toast.success('Login successful! Welcome back.');
+            toast.success('Login successful! Welcome back. ');
             const user = authService.getCurrentUser();
             if (user?.role === 'engineer') {
                 navigate('/my-assignments');
